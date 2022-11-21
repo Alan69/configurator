@@ -1,0 +1,13 @@
+.myvenv
+db.sqlite3
+.vscode/
+.vs
+/myvenv
+myvenv/
+/__pycache__
+__pycache__/
+migrations/
+/migrations
+.env
+/env
+env/
