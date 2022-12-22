@@ -6,8 +6,6 @@ db.sqlite3
 myvenv/
 /__pycache__
 __pycache__/
-migrations/
-/migrations
 .env
 /env
 env/
