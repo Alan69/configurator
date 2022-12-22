@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 # Create your models here.
-from regions.models import Region
+from regions.models import Region, City
 
 class CustomUserManager(BaseUserManager):
     def _create_user(self, email, password, first_name, last_name, **extra_fields):
@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(db_index=True, unique=True, max_length=254, verbose_name="Email")
     first_name = models.CharField(max_length=250, verbose_name="Имя")
     last_name = models.CharField(max_length=250, verbose_name="Фамилия")
-    region = models.ForeignKey(Region, on_delete=models.SET_NULL, null=True, blank=True)
+    region = models.ForeignKey(City, on_delete=models.SET_NULL, null=True, blank=True)
     
     
     is_staff = models.BooleanField(default=False)

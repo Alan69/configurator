@@ -1,0 +1,24 @@
+connection=wired
+network_interface=eth0
+dhcp=yes
+proxy=
+browser=chrome
+browser_user_agent=Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0) USTUDY KIOSK #client_id=50029
+
+homepage= {{regions.url.url}}  
+
+allow_icmp_protocol=yes
+primary_keyboard_layout=kz
+secondary_keyboard_layout=us
+disable_navigation_bar=yes
+kiosk_config=http://config.ustudy.kz/shm1/kiosk-config.php?id=$machineid
+disable_numlock=no
+timezone=Asia/Almaty
+wallpaper=http://ustudy.kz/kiosk-bg.jpg
+wake_on_lan=yes
+disable_zoom_controls=yes
+additional_components=uefi.zip 08-ssh.xzm 07-java.xzm 05-flash.xzm 05-flash_legacy.xzm 06-fonts.xzm 002-chrome.xzm
+screen_settings=DVI-0:disabled
+disable_private_mode=no
+removable_devices=no
+run_command=echo -e "#!/bin/bash\n xmodmap -verbose -e 'keycode 67= Escape'\n xmodmap -verbose -e 'keycode 133='\n xmodmap -verbose -e 'keycode 134='\n xmodmap -verbose -e 'keycode 206='\n xmodmap -verbose -e 'keycode 50='\n xmodmap -verbose -e 'keycode 62='\n xmodmap -verbose -e 'keycode 64='\n xmodmap -verbose -e 'keycode 108=' " > disable_keys.sh; chmod a+x disable_keys.sh; ./disable_keys.sh
